@@ -4,7 +4,7 @@ import {
   SequelizeModuleOptions,
   SequelizeOptionsFactory,
 } from '@nestjs/sequelize';
-import { User } from 'src/users/user.model';
+import { UserEntity } from 'src/users/user.model';
 
 @Injectable()
 export class SequelizeConfigService implements SequelizeOptionsFactory {
@@ -23,7 +23,7 @@ export class SequelizeConfigService implements SequelizeOptionsFactory {
       username,
       password,
       database,
-      models: [User],
+      models: [UserEntity],
       autoLoadModels: true,
       synchronize: true,
       define: {
